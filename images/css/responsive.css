@@ -1,0 +1,57 @@
+
+/* タブレット向けレイアウト */
+
+@media all and (max-width: 950px) {
+
+.top-wrapper h1 {
+    font-size: 28px;
+  }
+
+.heading h2 {
+    font-size: 20px
+}
+
+.heading1 h2 {
+    font-size: 20px
+}
+
+footer {
+    text-align: center;
+  }
+
+footer img {
+    width: 25px;
+    height: 15px;
+  }
+
+.menu {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+}
+
+
+/* スマホ向けレイアウト */
+
+@media all and (max-width: 750px) {
+ .menu {
+    width: 100%;
+  }
+
+ .message {
+    width: 100%;
+  }
+
+
+ .header-right a {
+    font-size:13px; 
+ }
+
+}
+
+
+
+
+
+
