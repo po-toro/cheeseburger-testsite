@@ -1,0 +1,547 @@
+﻿@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+
+/* container css */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* header css */
+header {
+    background-color:rgba(7, 192, 106, 0.9);
+    height: 80px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-left img {
+    padding-top: 15px;
+    opacity: 0.9;
+    width: 60px;
+    height: 60px;
+}
+
+.header-left img:hover {
+    opacity: 1;
+}
+
+.header-right {
+    float: right;
+}
+
+.header-right a {
+    line-height: 80px;
+    display: block;
+    color: white;
+    padding: 0 25px;
+    transition: all 0.5s;
+    float: left;
+}
+
+.header-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: cursor;
+}
+
+/* 全体調整CSS */
+.hamburger-demo-menubox *{
+    font-size: 16px;
+}
+
+.hamburger-demo-menubox li{
+    font-size: 14px;
+}
+
+
+/* hamburger css */
+/* inputを非表示 */
+.input-hidden{
+    display: none;
+}
+
+/* label */
+.hamburger-demo-switch{
+    cursor: pointer;
+    position: absolute;
+    right: 3%;
+    top: 0; /* ハンバーガーアイコンの位置（上から） */
+    z-index: 9999;
+    width: 4em; /* アイコン（クリック可能領域）の幅 */
+    height: 4em; /* アイコン（クリック可能領域の）高さ */
+}
+
+/* メニュー展開時にハンバーガーアイコンを固定 */
+#hamburger-demo1:checked ~ .hamburger-demo-switch{
+    position: fixed;
+}
+
+/* ハンバーガーアイコン */
+.hamburger-switch-line1, .hamburger-switch-line1:before, .hamburger-switch-line1:after{
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: .3s;
+    content: "";
+}
+
+.hamburger-switch-line1{
+    transform: translate(-50%, -50%);
+}
+
+.hamburger-switch-line1:before{
+    transform: translate(-50%, -300%);
+}
+
+.hamburger-switch-line1:after{
+    transform: translate(-50%, 200%);
+}
+
+/* ハンバーガーアイコン･アニメーション */
+#hamburger-demo1:checked ~ .hamburger-demo-switch .hamburger-switch-line1{
+    width: 0;
+}
+
+#hamburger-demo1:checked ~ .hamburger-demo-switch .hamburger-switch-line1:before{
+    transform: rotate(45deg) translate(-40%, 325%);
+}
+
+#hamburger-demo1:checked ~ .hamburger-demo-switch .hamburger-switch-line1:after{
+    transform: rotate(-45deg) translate(-40%, -325%);
+}
+
+/* メニューエリア */
+.hamburger-demo-menuwrap{
+    position: fixed;
+    height: 100%;
+    background: #e6fffe;
+    padding: 5em 3% 2em;
+    z-index: 9998;
+    transition: .3s;
+    overflow-y: scroll;
+    top: 0;
+    left: 100%;
+    width: 70%;
+    }
+
+/* メニューリスト */
+.hamburger-demo-menulist{
+    margin-right: 3%;
+    padding-left: 5% !important; /* !important不要な場合もあり */
+    list-style: none;
+}
+
+.hamburger-demo-menulist li a{
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: .5em 0;
+}
+
+/* メニューエリア･アニメーション */
+/* 右から */
+ #hamburger-demo1:checked ~ .hamburger-demo-menuwrap{
+    left: 30%;
+}
+
+/* コンテンツカバー */
+#hamburger-demo1:checked ~ .hamburger-demo-cover{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9997;
+    background: rgba(3,3,3,.5);
+    display: block;
+}
+
+/* top-wrapper css */
+
+.top-wrapper {
+    padding: 100px 0 50px 0;
+    background-color: rgb(233, 250, 210);
+    background-size: cover;
+    text-align: center;
+}
+
+.top-wrapper h1 {
+    font-size: 45px;
+    letter-spacing: 5px;
+    color: rgb(252, 153, 207);
+}
+
+.top-wrapper img {
+    width: 300px;
+    height: 300px;
+}
+
+/* material-wrapper css */
+
+.material-wrapper {
+    padding: 50px 0 50px 0;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.heading {
+    padding-bottom: 80px;
+}
+
+.heading1 {
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-weight: normal;
+    color: #5f5d60;
+}
+
+.heading p {
+    color: #a39da5;
+    font-size: 15px;
+}
+
+.menu {
+    width: 25%;
+    float: left;
+}
+
+.menu-icon {
+    position: relative;
+}
+
+.menu-icon img {
+    width: 150px;
+    height: 100px;
+}
+
+.menu-icon p {
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+}
+
+.text-contents {
+    width: 80%;
+    font-size: 14px;
+    color: #a39da5;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.clear {
+    clear: left;
+  }
+
+/* message-wrapper css */
+
+.message-wrapper {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding: 50px 0 50px 0;
+}
+
+.message {
+    padding: 15px 40px;
+    background-color: #54abfd;
+    box-shadow: 0 7px #01515f;
+    color: white;
+    opacity: 0.8;
+}
+
+.message:hover {
+    opacity: 1;
+}
+
+.message:active {
+    position: relative;
+    top: 7px;
+    box-shadow: none;
+    opacity: 1;
+}
+
+/* footer css */
+
+footer {
+    padding: 40px 0;
+}
+
+footer img {
+    width: 40px;
+    height: 30px;
+}
+  
+footer p {
+    color: #b3aeb5;
+    font-size: 12px;
+}
+
+/* item-wrapper css */
+
+.item-wrapper {
+    padding: 20px 0 20px 0;
+    text-align: center;
+    background-color: #f7f7f7;
+    height: 500px;
+}
+
+.items {
+    position: relative;
+}
+
+.item1 img {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: cover;
+    animation-name: downanim1;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    }
+    
+    @keyframes downanim1 {
+        0% {
+        transform: translateY(-100px);
+        }
+        100% {
+        transform: translateY(300px);
+        }
+}
+
+.item2 img {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: cover;
+    animation-name: downanim2;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 2;
+    }
+    
+    @keyframes downanim2 {
+        0% {
+        transform: translateY(-100px);
+        }
+        100% {
+        transform: translateY(285px);
+        }
+}
+
+.item3 img {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: cover;
+    animation-name: downanim3;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 3;
+    }
+    
+    @keyframes downanim3 {
+        0% {
+        transform: translateY(-100px);
+        }
+        100% {
+        transform: translateY(270px);
+        }
+}
+
+.item4 img {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: cover;
+    animation-name: downanim4;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 4;
+    }
+    
+    @keyframes downanim4 {
+        0% {
+        transform: translateY(-100px);
+        }
+        100% {
+        transform: translateY(277px);
+        }
+}
+
+.item5 img {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: cover;
+    animation-name: downanim5;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    }
+    
+    @keyframes downanim5 {
+        0% {
+        transform: translateY(-100px);
+        }
+        100% {
+        transform: translateY(250px);
+        }
+}
+
+.one-more-time {
+    padding: 15px 40px;
+    background-color: #36d678;
+    box-shadow: 0 7px #047a33;
+    color: white;
+    opacity: 0.8;
+    top: 0;
+    left: cover;
+    animation-name: downanim6;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 2.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 6;
+    position: absolute;
+    }
+    
+    @keyframes downanim6 {
+        0% {
+        transform: translateY(-100px);
+        }
+        100% {
+        transform: translateY(150px);
+        }
+}
+
+.one-more-time:hover {
+    opacity: 1;
+}
+
+.one-more-time:active {
+    top: 7px;
+    box-shadow: none;
+    opacity: 1;
+}
+
+/* ▽▽　ここからレスポンシブ　▽▽ */
+/* タブレット向けレイアウト */
+
+@media all and (max-width: 800px) {
+
+    .top-wrapper h1 {
+        font-size: 28px;
+      }
+    
+    .heading h2 {
+        font-size: 20px
+    }
+    
+    .heading1 h2 {
+        font-size: 20px
+    }
+    
+    footer {
+        text-align: center;
+      }
+    
+    footer img {
+        width: 25px;
+        height: 15px;
+      }
+    
+    .menu {
+        width: 50%;
+        margin-bottom: 50px;
+      }
+    
+    }
+
+/* スマホ向けレイアウト */
+
+@media all and (max-width: 650px) {
+  
+    .top-wrapper h1 {
+      font-size: 24px;
+    }
+  
+    .menu {
+      width: 100%;
+    }
+  
+    .message {
+      width: 100%;
+    }
+  
+  
+    .header-right a {
+      font-size:8px; 
+   }
+  
+   .item6 {
+    font-size: 12px;
+   }
+  
+  }
+
+/* ハンバーガーメニュー css　▽▽ */
+/* PCではハンバーガーメニューを表示しない */
+@media (min-width: 800px){
+    .hamburger-demo-menubox{
+        display: none;
+    }
+}
+
+/* スマホ・タブレットではヘッダーメニューを表示しない */
+@media (max-width: 800px){
+    .header-right-pc{
+        display: none;
+    }
+}
+    
+    
